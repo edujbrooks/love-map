@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>LOVE MAP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head> 
+  
+<body>
+  
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="">LOVE MAP</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	  <ul class="nav navbar-nav">	  
+		<!--<li><a href="#">Link</a></li> -->
+		<!--<li><input type="checkbox" name="my-checkbox" data-off-text="HATE" data-on-text="LOVE" checked></li>-->
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Links <span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+			<li><a href="http://www.edubrooks.com/">My homepage</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="#">Github project</a></li>
+		  </ul>
+		</li>
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+	</nav>
+  
+  
+    <div id="map-canvas"></div>
+	<div id="tweetFrame" class="tweetFrame front"></div>
+	
+	<!-- JS -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+	<script src="/javascripts/js.js"></script>
+
+	<!-- moustache template -->
+	<script id="tweet-template" type="text/html">
+		<div class="tweetDeck">
+			<div class="tweetHeader">
+				<img class="tweetAvatar" src="{{avatar}}" alt="avatar">
+				<span class="tweetName">{{name}}</span><br/>
+				<span class="tweetNickname"><a href="http://www.twitter.com/{{screenName}}" target="_blank">@{{screenName}}</a></span>
+			</div>
+			<div class="tweetBody">
+				{{{body}}}
+			</div>
+			{{#picUrl}}
+				<a href="{{picLink}}" target="_blank"><img src="{{picUrl}}" alt=""></a>
+			{{/picUrl}}
+		</div>
+	</script>
+	<!-- end moustache template -->
+  </body>
+</html>

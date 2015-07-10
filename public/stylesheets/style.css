@@ -1,0 +1,171 @@
+a {
+  color: #00B7FF;
+}
+html, body, #map-canvas {
+height: 100%;
+margin: 0px;
+padding: 0px
+}
+
+.front {
+	z-index: 1031;
+}
+
+.tweetFrame {
+	position: absolute;
+	top: 60px;
+	right: 10px;
+	bottom: 20px;
+	width: 25%;
+	background-color: rgba(240,190,190, .8);
+    border-radius: 5px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.tweetDeck {
+	border-style: solid;
+    border-width: 1px;
+	border-color: rgba(0, 0, 0, .2);
+	background-color: rgba(255,255,255, .8);
+	padding: 5px;
+	margin: 10px 5px 10px 5px;
+	min-height: 70px;
+    border-radius: 5px;
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(194,188,194,1);
+	-moz-box-shadow: 5px 5px 5px 0px rgba(194,188,194,1);
+	box-shadow: 5px 5px 5px 0px rgba(194,188,194,1);
+	animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+.tweetDeck img {
+    max-width: 400px;
+}
+
+.tweetHeader {
+	min-height: 55px;
+}
+
+.tweetAvatar {
+	float: left;
+	margin-right: 10px;
+}
+
+.tweetName {
+	font-weight: bold;
+}
+
+.tweetNickname {
+	color: #6699FF;
+}
+
+.love {
+	background-color: rgba(127,255,0, .2);
+}
+
+.hate {
+	background-color: rgba(220,20,60, .2);
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+a img {
+    display : block;
+    margin : auto;
+}
+
+/* CUSTOM NAVBAR */
+.navbar-default {
+background-image:none;
+  background-color: #ff2c3e;
+  border-color: #ff0000;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #a19fa3;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #a19fa3;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #a19fa3;
+  background-color: #ff0000;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #a19fa3;
+  background-color: #ff0000;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ff0000;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #ff0000;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #a19fa3;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #a19fa3;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #a19fa3;
+    background-color: #ff0000;
+  }
+}
