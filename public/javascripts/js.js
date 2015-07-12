@@ -18,36 +18,57 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 socket.on('tweet', function(tweet){
 
-	var template = document.getElementById("tweet-template").textContent;
-	var html = Mustache.render(template, tweet);	
-	var bookmark_element = document.createElement("div");
-    bookmark_element.innerHTML = html;
-	document.getElementById("tweetFrame").insertBefore(bookmark_element, document.getElementById("tweetFrame").firstChild);
+	var tweedeckTemplate = document.getElementById("tweet-template").textContent;
+	var tweedeckHtml = Mustache.render(tweedeckTemplate, tweet);	
+	var tweetdeckBookmark = document.createElement("div");
+    tweetdeckBookmark.innerHTML = tweedeckHtml;
+	document.getElementById("tweetFrame").insertBefore(tweetdeckBookmark, document.getElementById("tweetFrame").firstChild);
 	
 	//MAP
 	var myLatlng = new google.maps.LatLng(tweet.latitude, tweet.longitude);
-	var bookmark_element2 = document.createElement("div");
-	bookmark_element2.innerHTML = html;
-	var infowindow = new google.maps.InfoWindow({
+	
+	var infowindowTemplate = document.getElementById("infowindow-template").textContent;
+	var infowindowHtml = Mustache.render(infowindowTemplate, tweet);
+	var infowindowBookmark = document.createElement("div");
+	infowindowBookmark.innerHTML = infowindowHtml;
+	/*var infowindow = new google.maps.InfoWindow({
 		disableAutoPan: true,
-		content: bookmark_element2/*tweet.body*/
-	});
+		content: infowindowBookmark		
+	});*/
+
+	var infowindow = new InfoBox({
+         content: infowindowBookmark,
+         disableAutoPan: true,
+         maxWidth: 250,
+         pixelOffset: new google.maps.Size(-140, 0),
+         zIndex: null,
+         boxStyle: {
+            background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
+            opacity: 0.75,
+            width: "280px"
+        },
+        closeBoxMargin: "12px 4px 2px 2px",
+        closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+        infoBoxClearance: new google.maps.Size(1, 1)
+    });
+
+	
 	var marker = new google.maps.Marker({
       position: myLatlng,
 	  animation: google.maps.Animation.DROP,
-	  icon: '../images/love.png',
+	  icon: '../images/love.gif',
       map: map,
-      title: 'Hello World!'
+      title: tweet.name
     });
 	//map.setCenter(myLatlng);
 	infowindow.open(map, marker);
 	google.maps.event.addListener(marker, "click", function() {
 		infowindow.open(map,marker);
 	});
-	bookmark_element.addEventListener("mouseover", function() {
+	tweetdeckBookmark.addEventListener("mouseover", function() {
 		marker.setAnimation(google.maps.Animation.BOUNCE);
 	}, false);
-	bookmark_element.addEventListener("mouseout", function() {
+	tweetdeckBookmark.addEventListener("mouseout", function() {
 		marker.setAnimation(null);
 	}, false);
 	setTimeout(function(){ infowindow.close(); }, 5000);

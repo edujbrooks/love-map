@@ -80,16 +80,14 @@ io.on('connection', function(socket){
 /* TWITTER*/
 
 t.on('tweet', function (tweet) {
-	if (tweet['text'].indexOf("follow") == -1) {
+	if (tweet['text'].toLowerCase().indexOf("follow") == -1) {
 		if (tweet['coordinates'] || tweet['place']) {
 			console.log('---------- BEGIN NEW TWEET ----------------------');
-			console.log(tweet['text'].indexOf("follow me"));
 			console.log('Name: ' + tweet['user']['name']);
 			console.log('ScreenName: @' + tweet['user']['screen_name']);
 			var picUrl, picLink;
 			if (tweet['entities']['media']) {
-				console.log('media found');
-				picUrl = tweet['entities'].media[0].media_url;
+				picUrl = tweet['entities'].media[0].media_url_https;
 				picLink = tweet['entities'].media[0].expanded_url;
 			}
 
@@ -118,7 +116,7 @@ t.on('tweet', function (tweet) {
 				body: tools.linkify(tweet['text']), 
 				latitude: latitude, 
 				longitude: longitude, 
-				avatar: tweet['user']['profile_image_url'],
+				avatar: tweet['user']['profile_image_url_https'],
 				picUrl: picUrl, 
 				picLink: picLink
 			});
