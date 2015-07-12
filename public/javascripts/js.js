@@ -7,6 +7,7 @@ function initialize() {
 	var mapOptions = {
 		center: new google.maps.LatLng(50.0357622, 8.3318154),
 		disableDefaultUI: true,
+		minZoom: 2,
 		zoom: 4
 	};
 	
@@ -31,10 +32,6 @@ socket.on('tweet', function(tweet){
 	var infowindowHtml = Mustache.render(infowindowTemplate, tweet);
 	var infowindowBookmark = document.createElement("div");
 	infowindowBookmark.innerHTML = infowindowHtml;
-	/*var infowindow = new google.maps.InfoWindow({
-		disableAutoPan: true,
-		content: infowindowBookmark		
-	});*/
 
 	var infowindow = new InfoBox({
          content: infowindowBookmark,
