@@ -71,6 +71,8 @@ app.use(function(err, req, res, next) {
 /* SOCKET.IO*/
 io.on('connection', function(socket){
   console.log('a user connected');
+    var clientIp = socket.request.connection.remoteAddress
+    console.log(clientIp)
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });

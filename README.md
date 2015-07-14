@@ -1,4 +1,4 @@
 Love Map
 ========
 
-Love arround the world!
+See in real-time tweets of love around the world!!

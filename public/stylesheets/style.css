@@ -62,14 +62,6 @@ padding: 0px
 	color: #6699FF;
 }
 
-.love {
-	background-color: rgba(127,255,0, .2);
-}
-
-.hate {
-	background-color: rgba(220,20,60, .2);
-}
-
 @keyframes fadein {
     from {
         opacity:0;
@@ -109,11 +101,9 @@ a img {
 }
 
 /* CUSTOM INFOWINDOW*/
-.infobox-wrapper {
-    /*display:none;*/
-}
+
 #infobox {
-    border:2px solid red;
+    border:2px solid pink;
     margin-top: 8px;
     background:#ffffff;
     color:#000;
@@ -129,11 +119,17 @@ a img {
 	max-width: 200px !important;
 }
 
+/* NAVBAR LOGO */
+.navbar-brand img {
+	max-width:175px; 
+	margin-top: -10px;
+}
+
 /* CUSTOM NAVBAR */
 .navbar-default {
 background-image:none;
-  background-color: #ff2c3e;
-  border-color: #ff0000;
+  background-color: #FF5BA5;
+  border-color: #FF5BA5;
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
@@ -190,3 +186,18 @@ background-image:none;
     background-color: #ff0000;
   }
 }
+
+
+/* VERTICAL SPACES */
+.voffset { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3,.fb_iframe_widget { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.hoffset3 { margin-left: 15px;}
