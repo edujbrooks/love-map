@@ -1,5 +1,6 @@
 var socket = io();
 var map;
+var centered = false;
 
 
 function initialize() {
@@ -57,7 +58,12 @@ socket.on('tweet', function(tweet){
       map: map,
       title: tweet.name
     });
-	//map.setCenter(myLatlng);
+	if (document.getElementById("cbAutopan").checked && centered === false) {
+		map.setCenter(myLatlng);
+		//delay for next autopan so it does not go crazy
+		centered = true;
+		setTimeout(function(){ centered = false; }, 1000);
+	}
 	infowindow.open(map, marker);
 	google.maps.event.addListener(marker, "click", function() {
 		infowindow.open(map,marker);

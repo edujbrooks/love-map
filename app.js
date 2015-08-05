@@ -85,6 +85,15 @@ t.on('tweet', function (tweet) {
 	if (tweet['text'].toLowerCase().indexOf("follow") == -1) {
 		if (tweet['coordinates'] || tweet['place']) {
 			console.log('---------- BEGIN NEW TWEET ----------------------');
+			//console.log (tweet);
+			if (tweet['quoted_status']) {
+				console.log ("REPLY FOUND:");
+				console.log (tweet['quoted_status']);
+				console.log("REPLY NAME: " + tweet['quoted_status']['user']['name']);
+				console.log("REPLY SCREENNAME: @" + tweet['quoted_status']['user']['screen_name']);
+				console.log("REPLY TEXT: " + tweet['quoted_status']['text']);
+				console.log("REPLY PIC: " + tweet['quoted_status']['user']['profile_image_url_https']);
+			}
 			console.log('Name: ' + tweet['user']['name']);
 			console.log('ScreenName: @' + tweet['user']['screen_name']);
 			var picUrl, picLink;

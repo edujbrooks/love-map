@@ -1,0 +1,67 @@
+<!-- NAVBAR -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <!--<a class="navbar-brand" href="">LOVE MAP</a>-->
+			<a class="navbar-brand" rel="home" href="#" title="Love around the world">
+				<img src="/images/logo.png">
+			</a>		  
+		</div>
+
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+		  <ul class="nav navbar-nav">	  
+			<li><a href="#" data-toggle="modal" data-target="#modalOptions">Options</a></li> 
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="http://www.edubrooks.com/" target="_blank">My homepage</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="https://github.com/edujbrooks/love-map" target="_blank">Github project</a></li>
+			  </ul>
+			</li>
+			<li>
+				<div class="fb-like" data-href="https://love-map-edward.herokuapp.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+			</li>
+			<li>
+				<div class="voffset3 hoffset3"><a href="https://twitter.com/share" class="twitter-share-button" data-text="See in realtime love tweets around the world!" data-hashtags="lovemap">Tweet</a></div>
+			</li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+	</nav><!-- /.NAVBAR -->
+	
+	
+  
+    <div id="map-canvas"></div>
+	
+	
+	
+	<div id="tweetFrame" class="tweetFrame front">
+		<div class="alert alert-danger text-center voffset3" role="alert">♥♥ Tweets will appear here... ♥♥</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="modalOptions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+		  <div class="modal-header center">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="ModalLabel">OPTIONS</h4>
+		  </div>
+		  <div class="modal-body">
+			Autopan: <input type="checkbox" id="cbAutopan" name="cbAutopan" value="unit-in-group" /><br/>
+			Only pics: <input type="checkbox" id="cbOnlypics" name="cbOnlypics" value="unit-in-group" /><br/>
+			Earth view: <input type="checkbox" id="cbEarth" name="cbEarth" value="unit-in-group" /><br/>
+		  </div>
+		 <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div><!-- /.Modal -->
