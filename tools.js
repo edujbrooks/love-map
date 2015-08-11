@@ -1,6 +1,5 @@
 module.exports = {
   center: function (arr) {
-
 	var minX= 1500, maxX= -1500, minY= 1500, maxY= -1500; //initializing seems to fix a weird bug
     for (var i = 0; i < arr.length; i++) {
 		//console.log("loop n: ", i + 1);
@@ -18,6 +17,8 @@ module.exports = {
     }
     return [(minX + maxX) / 2, (minY + maxY) / 2];
   },
+
+
   linkify: function (inputText) {
 	var replacedText, replacePattern1, replacePattern2, replacePattern3;
 
@@ -30,5 +31,5 @@ module.exports = {
     replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
 
     return replacedText;
-  } 
+  }
 };

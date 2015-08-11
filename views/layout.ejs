@@ -4,18 +4,18 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<title>LOVE MAP</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/stylesheets/style.css">
 
 	<meta property="og:title" content="THE LOVE MAP">
     <meta property="og:url" content="https://love-map-edward.herokuapp.com">
     <meta property="og:image" content="https://love-map-edward.herokuapp.com/images/thumbnail.png">
     <meta property="og:description" content="Check in realtime tweets of love around the world! :)">
-</head> 
-  
+</head>
+
 <body>
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -25,9 +25,9 @@
 	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1568069986768203";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
-	
+
 	<%- body %>
-	
+
 	<!-- JS -->
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -44,7 +44,8 @@
 		<div class="tweetDeck">
 			<div class="tweetHeader">
 				<img class="tweetAvatar" src="{{avatar}}" alt="avatar">
-				<span class="tweetName">{{name}}</span><br/>
+				<span class="tweetName">{{name}}</span>
+        <span class="tweetLocation glyphicon glyphicon-screenshot" aria-hidden="true"></span><br/>
 				<span class="tweetNickname"><a href="http://www.twitter.com/{{screenName}}" target="_blank">@{{screenName}}</a></span>
 			</div>
 			<div class="tweetBody">
